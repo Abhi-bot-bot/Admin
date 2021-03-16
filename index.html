@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <script>
+    function call_me() {
+      alert("Submitted");
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Sign in</title>
+</head>
+
+<body>
+  <form action="adminlogin.php" method="POST">
+    <div class="tpp" align="top" style="width: 1200px">
+      <span
+        style="vertical-align: middle;  font-size: 75px; margin-left: 550px; text-shadow: 2px 2px 8px rgb(235 63 10); ">
+        GIET College</span>
+    </div>
+    <div class="main">
+      <p class="sign" align="center">Sign in</p>
+      <form class="form1">
+        <input class="uname" type="text" align="center" placeholder="Username" name="uname">
+        <input class="pass" type="password" align="center" placeholder="Password" name="pass">
+        <button class="submit" onclick="call_me()">Sign in</button>
+        <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+
+
+    </div>
+  </form>
+
+</body>
+
+</html>
