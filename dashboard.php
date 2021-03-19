@@ -1,80 +1,102 @@
 <?php
+include './header.php';
+include './footer.php';
+include './sidemenu.php';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/dashboard.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboad</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+.dash{
+    margin-left: 200px;
+    margin-top: 20px;   
+}
+.container{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,0fr));
+    grid-gap: 10px;
+    padding:10px;
+    box-sizing: border-box;
+    float: right;
+    margin-top:50px;
+}
+.container .box{
+    position: relative;
+    background: cornflowerblue;
+    padding: 20px 40px 40px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.container .box:nth-child(1){
+    background: linear-gradient(45deg,#036eb7,#64eaff)
+}
+.container .box:nth-child(2){
+    background: linear-gradient(45deg,#e91e63,#ed55ff)
+}
+.container .box:nth-child(3){
+    background: linear-gradient(45deg,#086d35,#00ff72)
+}
+.container .box:nth-child(4){
+    background: linear-gradient(45deg,#f05a4f,#f4c030)
+}
+
+
+.container .box h2{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    color: #fff;
+    z-index: 1;
+    opacity: 0.4;
+}
+.container .box h3{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.container .box p{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+}
+    </style>
 </head>
 <body>
-  <!-- HEADER SECTION-->
-        <div class="header">
-           
-            <img src="images/logo.jpg" alt="" width="90px" height="90px" style="margin-top: 20px;">
-            
-            <div class="logo"><a href=""><img src="images/admin.png" alt="" width="40px" height="40px"><p>ADMIN</p></a></div>
-            <div class="header-right"><h1>Gandhi Institute for Education and Technology</h1></div>
+    <h1 class="dash">Dashboard</h1>
+    <div class="container">
+        <div class="box">
+            <h2>1</h2>
+            <h3>ONE</h3>
+            <p>Lorem ipsum dolor sit amet fugit?</p>
         </div>
-
-  <!--Side Bar-->
-
-        <div class="wrapper">
-          <div class="sidebar">
-              
-              <ul>
-                  <li><a href="dashboard.php">Dashboard</a></li>
-                  <li>
-                    <button class="dropdown-btn">Master Management</button>
-                    <div class="dropdown-container">
-                      <a href="program.php">Program</a>
-                      <a href="branch.php">Branch</a>
-                      <a href="session.php">Session</a>
-                      <a href="section.php">Section</a>
-                      <a href="subject.php">Subject</a>
-                    </div>
-                  </li>
-                  <li><a href="#">Time Table</a></li>
-                  <li><a href="#">Notification</a></li>
-                  <li><a href="#">Examination</a></li>
-                  <li><a href="#">Assesment</a></li>
-                  <li><a href="#">Attendence</a></li>
-                  <li><a href="#">Report</a></li>
-
-
-                  <li><a href="index.html">Logout</a></li>
-              </ul> 
-              
-          </div>
-          
-          </div>
-      </div>
-
-<!--Footer-->
-
-    <div class="footer">
-        <p>Footer</p>
+        <div class="box">
+            <h2>2</h2>
+            <h3>TWO</h3>
+            <p>Lorem ipsum dolor sit amet fugit?</p>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+            <h3>THREE</h3>
+            <p>Lorem ipsum dolor sit amet fugit?</p>
+        </div>
+        <div class="box">
+            <h2>4</h2>
+            <h3>FOUR</h3>
+            <p>Lorem ipsum dolor sit amet fugit?</p>
+        </div>
     </div>
-
-
-
-
-      <script>
-        
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
-        
-        for (i = 0; i < dropdown.length; i++) {
-          dropdown[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var dropdownContent = this.nextElementSibling;
-          if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-          } else {
-          dropdownContent.style.display = "block";
-          }
-          });
-        }
-        </script>
-   
 </body>
-</html> 
+</html>
