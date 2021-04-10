@@ -22,8 +22,8 @@
                       <a href="subject.php">Subject</a>
                     </div>
                   </li>
-                  <li><a href="#">Time Table</a></li>
-                  <li><a href="#">Notification</a></li>
+                  <li><a href="timetable.php">Time Table</a></li>
+                  <li><a href="notification.php">Notification</a></li>
                   <li><a href="#">Examination</a></li>
                   <li><a href="#">Assesment</a></li>
                   <li><a href="#">Attendence</a></li>
