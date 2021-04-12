@@ -106,7 +106,7 @@ include './sidemenu.php';
 </style>
 </head>
 <body>
-
+<form name="program">
 	<div class="popup" id="popup-1">
   <div class="overlay"></div>
   <div class="content">
@@ -114,14 +114,15 @@ include './sidemenu.php';
     <h1>Add New Program</h1>
     <div class="data">
     	<label>Program Name</label>
-    	<input type="text" required>
+    	<input type="text" name="pname" required>
+
     </div>
     <div>
 <button class="button button2" style="width: 90px">Save</button>
     </div>
   </div>
 </div>
-
+</form>
 
 <button class="button button1" onclick="togglePopup()" style="width: 180px">+ Add New</button>
 
