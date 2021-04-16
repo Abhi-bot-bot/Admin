@@ -2,6 +2,7 @@
 include './header.php';
 include './footer.php';
 include './sidemenu.php';
+include 'dbcon.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -106,7 +107,7 @@ include './sidemenu.php';
 </style>
 </head>
 <body>
-<form name="program">
+<form name='addprogram' action='add_program.php' method='post'>
 	<div class="popup" id="popup-1">
   <div class="overlay"></div>
   <div class="content">
@@ -115,10 +116,9 @@ include './sidemenu.php';
     <div class="data">
     	<label>Program Name</label>
     	<input type="text" name="pname" required>
-
     </div>
     <div>
-<button class="button button2" style="width: 90px">Save</button>
+<input type="submit" value='Save' class="button button2" style="width: 90px">
     </div>
   </div>
 </div>
@@ -142,41 +142,31 @@ include './sidemenu.php';
 		<th>Action</th>
 	</tr>
 
-	<tr>
-		<td style="text-align: center;">1</td>
-		<td style="text-align: center;">M.Tech</td>
-		<td style="text-align: center;">Active</td>
+<?php 
+$query="select * from program";
+
+if ($result = mysqli_query($conn, $query)) {
+  $count=1;
+  while ($row = mysqli_fetch_row($result)) {
+    
+    ?>
+<tr>
+		<td style="text-align: center;"><?php echo $count;?></td>
+		<td style="text-align: center;"><?php echo $row[1];?></td>
+		<td style="text-align: center;"><?php echo $row[2];?></td>
 		<td style="text-align: center;">delete/Edit</td>
 	</tr>
 
-	<tr>
-		<td style="text-align: center;">2</td>
-		<td style="text-align: center;">BE</td>
-		<td style="text-align: center;">Not Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
+    <?php
+    $count= $count+1;
+  }
+  
+}
+?>
 
-	<tr>
-		<td style="text-align: center;">3</td>
-		<td style="text-align: center;">B.Tech</td>
-		<td style="text-align: center;">Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
+	
 
-	<tr>
-		<td style="text-align: center;">4</td>
-		<td style="text-align: center;">BCA</td>
-		<td style="text-align: center;">Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
-
-	<tr>
-		<td style="text-align: center;">5</td>
-		<td style="text-align: center;">MCA</td>
-		<td style="text-align: center;">Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
-
+	
 </table>
 
 </body>

@@ -9,7 +9,7 @@ include './sidemenu.php';
 </head>
 <body>
 <h1 style="margin-left:200px; margin-top:20px;">NOTIFICATION</h1>
-<form action="">
+<form name="addnotification" action="add_notification.php" method="post">
     <div style="text-align:center; margin-top:100px;">
         <h3>Notification Name : <input type="text" name="notification" required></h3>
         <br><br><br>

@@ -2,6 +2,7 @@
 include './header.php';
 include './footer.php';
 include './sidemenu.php';
+include 'dbcon.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -104,7 +105,7 @@ include './sidemenu.php';
 </style>
 </head>
 <body>
-<form action="">
+<form name='addsubject' action='add_subject.php' method='post'>
 	<div class="popup" id="popup-1">
   <div class="overlay"></div>
   <div class="content">
@@ -112,14 +113,15 @@ include './sidemenu.php';
     <h1>Add New Subject</h1>
     <div class="data">
     	<label>Subject Name</label>
-    	<input type="text" required>
+    	<input type="text" name="subname" required>
     </div>
     <div>
-<button class="button button2" style="width: 90px">Save</button>
+<input type="submit" value='Save' class="button button2" style="width: 90px">
     </div>
   </div>
 </div>
 </form>
+
 
 <button class="button button1" onclick="togglePopup()" style="width: 180px">+ Add New</button>
 
@@ -141,42 +143,27 @@ include './sidemenu.php';
 		<th>Action</th>
 	</tr>
 
-	<tr>
-		<td style="text-align: center;">1</td>
-		<td style="text-align: center;">Math</td>
-		<td style="text-align: center;">Not Active</td>
+<?php 
+$query="select * from subject";
+
+if ($result = mysqli_query($conn, $query)) {
+  $count=1;
+  while ($row = mysqli_fetch_row($result)) {
+    
+    ?>
+<tr>
+		<td style="text-align: center;"><?php echo $count;?></td>
+		<td style="text-align: center;"><?php echo $row[1];?></td>
+		<td style="text-align: center;"><?php echo $row[2];?></td>
 		<td style="text-align: center;">delete/Edit</td>
 	</tr>
 
-	<tr>
-		<td style="text-align: center;">2</td>
-		<td style="text-align: center;">Java</td>
-		<td style="text-align: center;"> Not Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
-
-	<tr>
-		<td style="text-align: center;">3</td>
-		<td style="text-align: center;">AI</td>
-		<td style="text-align: center;">Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
-
-	<tr>
-		<td style="text-align: center;">4</td>
-		<td style="text-align: center;">ML</td>
-		<td style="text-align: center;">Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
-
-	<tr>
-		<td style="text-align: center;">5</td>
-		<td style="text-align: center;">Python</td>
-		<td style="text-align: center;">Active</td>
-		<td style="text-align: center;">delete/Edit</td>
-	</tr>
-
-</table>
+    <?php
+    $count= $count+1;
+  }
+  
+}
+?>
 
 </body>
 </html>
