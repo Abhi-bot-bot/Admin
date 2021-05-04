@@ -39,14 +39,14 @@ table.inner{
 <body>
 <h1 style="margin-left:200px; margin-top:20px;">FACULTY REGISTRATION</h1>
 
-<form action="" method="post">
+<form name="addfaculty" action="add_faculty.php" method="post">
 <div style="margin-left:550px; margin-top:50px;">
 <table align="center" cellpadding = "50">
  
 <!----- Employee Name ---------------------------------------------------------->
 <tr>
 <td>Employee Name</td>
-<td><input type="text" name="Employee_name" maxlength="30" required/>
+<td><input type="text" name="name" maxlength="30" required/>
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
@@ -54,26 +54,26 @@ table.inner{
 <!----- Employement ID ---------------------------------------------------------->
 <tr>
 <td>Employement ID</td>
-<td><input type="text" name="Employement_id" maxlength="30"/>
+<td><input type="text" name="empid" maxlength="30" required/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td>Date of Birth</td>
-<td><input type="date" ></td>
+<td><input type="date" name="dob" required></td>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
 <td>Email Id</td>
-<td><input type="text" name="Email_Id" maxlength="100" /></td>
+<td><input type="text" name="email" maxlength="100" required/></td>
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
 <td>Mobile Number</td>
 <td>
-<input type="text" name="Mobile_Number" maxlength="10" />
+<input type="text" name="phone" maxlength="10" required/>
 (10 digit number)
 </td>
 </tr>
@@ -82,9 +82,9 @@ table.inner{
 <tr>
 <td>Gender</td>
 <td>
-Male <input type="radio" name="Gender" value="Male" />
-Female <input type="radio" name="Gender" value="Female" />
-Other <input type="radio" name="Gender" value="Other" />
+Male <input type="radio" name="gender" value="Male" />
+Female <input type="radio" name="gender" value="Female" />
+Other <input type="radio" name="gender" value="Other" />
 </td>
 </tr>
  
@@ -93,21 +93,21 @@ Other <input type="radio" name="Gender" value="Other" />
 <!----- Designation ---------------------------------------------------------->
 <tr>
 <td>Designation</td>
-<td><input type="text" name="Designation" maxlength="30" />
+<td><input type="text" name="designation" maxlength="30" required/>
 </td>
 </tr>
  
 <!----- Subject Teaching ---------------------------------------------------------->
 <tr>
 <td>Subject Teaching</td>
-<td><input type="text" name="Subject_teaching" maxlength="6" />
+<td><input type="text" name="subteacher" maxlength="6" required/>
 </td>
 </tr>
  
 <!----- Password ---------------------------------------------------------->
 <tr>
 <td>Password</td>
-<td><input type="password" name="Password" maxlength="30" />
+<td><input type="password" name="pass" maxlength="30" required/>
 </td>
 </tr>
 
@@ -115,7 +115,7 @@ Other <input type="radio" name="Gender" value="Other" />
  <!----- Submit and Reset ------------------------------------------------->
 <tr>
 <td colspan="2" align="center">
-<input type="submit" value="Submit">
+<input type="submit" value="Save">
 <input type="reset" value="Reset">
 </td>
 </tr>

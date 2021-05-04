@@ -39,86 +39,86 @@ table.inner{
 <body>
 <h1 style="margin-left:200px; margin-top:20px;">STUDENT REGISTRATION</h1>
 
-<form action="" method="post">
+<form name="addstudent" action="add_student.php" method="post">
 <div style="margin-left:550px; margin-top:50px;">
 <table align="center" cellpadding = "50">
  
-<!----- Student Name ---------------------------------------------------------->
-<tr>
-<td>Student Name</td>
-<td><input type="text" name="Student_name" maxlength="30" required/>
-(max 30 characters a-z and A-Z)
-</td>
-</tr>
- 
-<!----- Regd. No ---------------------------------------------------------->
-<tr>
-<td>Regd No.</td>
-<td><input type="text" name="Regd_no" maxlength="30"/>
-</td>
-</tr>
- 
-<!----- Date Of Birth -------------------------------------------------------->
-<tr>
-<td>Date of Birth</td>
-<td><input type="date" ></td>
- 
-<!----- Email Id ---------------------------------------------------------->
-<tr>
-<td>Email Id</td>
-<td><input type="text" name="Email_Id" maxlength="100" /></td>
-</tr>
- 
-<!----- Mobile Number ---------------------------------------------------------->
-<tr>
-<td>Mobile Number</td>
-<td>
-<input type="text" name="Mobile_Number" maxlength="10" />
-(10 digit number)
-</td>
-</tr>
- 
-<!----- Gender ----------------------------------------------------------->
-<tr>
-<td>Gender</td>
-<td>
-Male <input type="radio" name="Gender" value="Male" />
-Female <input type="radio" name="Gender" value="Female" />
-Other <input type="radio" name="Gender" value="Other" />
-</td>
-</tr>
- 
+      <!----- Student Name ---------------------------------------------------------->
+      <tr>
+      <td>Student Name</td>
+      <td><input type="text" name="name" maxlength="30" required/>
+      (max 30 characters a-z and A-Z)
+      </td>
+      </tr>
+      
+      <!----- Regd. No ---------------------------------------------------------->
+      <tr>
+      <td>Regd No.</td>
+      <td><input type="text" name="regdno" maxlength="30" required/>
+      </td>
+      </tr>
+      
+      <!----- Date Of Birth -------------------------------------------------------->
+      <tr>
+      <td>Date of Birth</td>
+      <td><input type="date" name="dob" required></td>
+      
+      <!----- Email Id ---------------------------------------------------------->
+      <tr>
+      <td>Email Id</td>
+      <td><input type="text" name="emailid" maxlength="100" required/></td>
+      </tr>
+      
+      <!----- Mobile Number ---------------------------------------------------------->
+      <tr>
+      <td>Mobile Number</td>
+      <td>
+      <input type="text" name="phone" maxlength="10" required/>
+      (10 digit number)
+      </td>
+      </tr>
+      
+      <!----- Gender ----------------------------------------------------------->
+      <tr>
+      <td>Gender</td>
+      <td>
+      Male <input type="radio" name="gender" value="Male" />
+      Female <input type="radio" name="gender" value="Female" />
+      Other <input type="radio" name="gender" value="Other" />
+      </td>
+      </tr>
+      
 
- 
-<!----- Program ---------------------------------------------------------->
-<tr>
-<td>Program</td>
-<td><input type="text" name="Program" maxlength="30" />
-</td>
-</tr>
- 
-<!----- Branch ---------------------------------------------------------->
-<tr>
-<td>Branch</td>
-<td><input type="text" name="Branch" maxlength="6" />
-</td>
-</tr>
- 
-<!----- Password ---------------------------------------------------------->
-<tr>
-<td>Password</td>
-<td><input type="password" name="Password" maxlength="30" />
-</td>
-</tr>
+      
+      <!----- Program ---------------------------------------------------------->
+      <tr>
+      <td>Program</td>
+      <td><input type="text" name="program" maxlength="30" required/>
+      </td>
+      </tr>
+      
+      <!----- Branch ---------------------------------------------------------->
+      <tr>
+      <td>Branch</td>
+      <td><input type="text" name="branch" maxlength="6" required/>
+      </td>
+      </tr>
+      
+      <!----- Password ---------------------------------------------------------->
+      <tr>
+      <td>Password</td>
+      <td><input type="password" name="pass" maxlength="30" required/>
+      </td>
+      </tr>
 
- 
- <!----- Submit and Reset ------------------------------------------------->
-<tr>
-<td colspan="2" align="center">
-<input type="submit" value="Submit">
-<input type="reset" value="Reset">
-</td>
-</tr>
+      
+      <!----- Submit and Reset ------------------------------------------------->
+      <tr>
+      <td colspan="2" align="center">
+      <input type="submit" value="Save">
+      <input type="reset" value="Reset">
+      </td>
+      </tr>
 </table>
  </div>
 </form>
