@@ -18,6 +18,9 @@ include './sidemenu.php';
          <h3 style="text-align:center; margin-top:50px">Branch &nbsp;
          <input style="height:30px;" type="text" name="program" size="30">
          </h3>
+         <h3 style="text-align:center; margin-top:50px">Semester &nbsp;
+         <input style="height:30px;" type="text" name="program" size="30">
+         </h3>
          <h3 style="text-align:center; margin-top:50px">Select an attachment: <input type="file" name="myfile"></h3><br><br>
 
           <div style="text-align:center; margin-top:20px">
