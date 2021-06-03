@@ -7,6 +7,8 @@ include 'dbcon.php';
 <!DOCTYPE html>
 <html>
 <head>
+<!--link-->
+<link rel="stylesheet" href="css/all.min.css">
 <!-- Table-->
 	<style type="text/css">
 	 table.center {
@@ -165,17 +167,53 @@ include 'dbcon.php';
  
  <!----- Program ---------------------------------------------------------->
  <tr>
- <td>Program</td>
- <td><input type="text" name="program" maxlength="30" required/>
- </td>
- </tr>
+      <td>Program</td>
+      <td><select name="program" id="">
+      <?php 
+        $query="select * from program";
+
+        if ($result = mysqli_query($conn, $query)) {
+          
+          while ($row = mysqli_fetch_row($result)) {
+            
+            ?>
+            <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+       
+
+            <?php
+            
+          }
+          
+        }
+        ?>
+      </select>
+      </td>
+      </tr>
  
  <!----- Branch ---------------------------------------------------------->
  <tr>
- <td>Branch</td>
- <td><input type="text" name="branch" maxlength="6" required/>
- </td>
- </tr>
+      <td>Branch</td>
+      <td><select name="branch" id="">
+      <?php 
+        $query="select * from branch";
+
+        if ($result = mysqli_query($conn, $query)) {
+          
+          while ($row = mysqli_fetch_row($result)) {
+            
+            ?>
+            <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+       
+
+            <?php
+            
+          }
+          
+        }
+        ?>
+      </select>
+      </td>
+      </tr>
  
  <!----- Password ---------------------------------------------------------->
  <tr>
@@ -221,6 +259,7 @@ include 'dbcon.php';
     <th>Password</th>
     <th>Gender</th>
     <th>DOB</th>
+    <th>Action</th>
 	</tr>
 
 <?php 
@@ -242,6 +281,7 @@ if ($result = mysqli_query($conn, $query)) {
     <td style="text-align: center;"><?php echo $row[7];?></td>
     <td style="text-align: center;"><?php echo $row[8];?></td>
     <td style="text-align: center;"><?php echo $row[9];?></td>
+    <td style="text-align: center;"><a href="studentdelete.php?id='<?php echo $row[0];?>'"><i class="fa fa-trash"></i></a>/Edit</td>
 		
 	</tr>
 

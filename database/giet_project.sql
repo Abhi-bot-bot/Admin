@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2021 at 12:31 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jun 03, 2021 at 09:28 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -48,19 +49,11 @@ INSERT INTO `adminlogin` (`id`, `username`, `password`, `name`) VALUES
 --
 
 CREATE TABLE `branch` (
-  `sr. no.` int(200) NOT NULL,
+  `sr` int(200) NOT NULL,
   `branchname` varchar(10) NOT NULL,
   `status` varchar(12) NOT NULL,
   `action` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `branch`
---
-
-INSERT INTO `branch` (`sr. no.`, `branchname`, `status`, `action`) VALUES
-(1, 'nwe', 'OK', 'active'),
-(3, 'hello', 'OK', 'active');
 
 -- --------------------------------------------------------
 
@@ -69,12 +62,12 @@ INSERT INTO `branch` (`sr. no.`, `branchname`, `status`, `action`) VALUES
 --
 
 CREATE TABLE `faculty_registration` (
-  `Sr. no` int(50) NOT NULL,
+  `sr` int(50) NOT NULL,
   `empname` varchar(50) NOT NULL,
   `empid` int(50) NOT NULL,
   `pass` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` int(12) NOT NULL,
+  `phone` varchar(20) NOT NULL,
   `designation` varchar(20) NOT NULL,
   `teaching` varchar(20) NOT NULL,
   `gender` varchar(10) NOT NULL,
@@ -100,23 +93,11 @@ CREATE TABLE `notification` (
 --
 
 CREATE TABLE `program` (
-  `sr.no` int(200) NOT NULL,
+  `sr` int(200) NOT NULL,
   `programname` varchar(50) NOT NULL,
   `status` varchar(12) NOT NULL,
   `action` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `program`
---
-
-INSERT INTO `program` (`sr.no`, `programname`, `status`, `action`) VALUES
-(1, 'hello', 'OK', 'active'),
-(2, 'New', 'OK', 'active'),
-(4, 'flksed', 'OK', 'active'),
-(5, 'newprogram', 'OK', 'active'),
-(6, 'lksf', 'OK', 'active'),
-(7, 'dfsf', 'OK', 'active');
 
 -- --------------------------------------------------------
 
@@ -125,18 +106,24 @@ INSERT INTO `program` (`sr.no`, `programname`, `status`, `action`) VALUES
 --
 
 CREATE TABLE `section` (
-  `sr. no.` int(200) NOT NULL,
+  `sr` int(200) NOT NULL,
   `section` varchar(5) NOT NULL,
   `status` varchar(12) NOT NULL,
   `action` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `section`
+-- Table structure for table `semester`
 --
 
-INSERT INTO `section` (`sr. no.`, `section`, `status`, `action`) VALUES
-(1, 'ABC', 'OK', 'active');
+CREATE TABLE `semester` (
+  `sr` int(11) NOT NULL,
+  `semester` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `action` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -145,19 +132,11 @@ INSERT INTO `section` (`sr. no.`, `section`, `status`, `action`) VALUES
 --
 
 CREATE TABLE `session` (
-  `sr. no.` int(200) NOT NULL,
+  `sr` int(200) NOT NULL,
   `year` varchar(10) NOT NULL,
   `status` varchar(12) NOT NULL,
   `action` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `session`
---
-
-INSERT INTO `session` (`sr. no.`, `year`, `status`, `action`) VALUES
-(2, '2021', 'OK', 'active'),
-(3, '2017-2021', 'OK', 'active');
 
 -- --------------------------------------------------------
 
@@ -166,7 +145,7 @@ INSERT INTO `session` (`sr. no.`, `year`, `status`, `action`) VALUES
 --
 
 CREATE TABLE `student_registration` (
-  `Sr. no` int(50) NOT NULL,
+  `sr` int(50) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `regd` int(12) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -185,18 +164,11 @@ CREATE TABLE `student_registration` (
 --
 
 CREATE TABLE `subject` (
-  `sr. no.` int(200) NOT NULL,
+  `sr` int(200) NOT NULL,
   `subject` varchar(50) NOT NULL,
   `status` varchar(12) NOT NULL,
   `action` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `subject`
---
-
-INSERT INTO `subject` (`sr. no.`, `subject`, `status`, `action`) VALUES
-(1, 'English', 'OK', 'active');
 
 --
 -- Indexes for dumped tables
@@ -212,13 +184,13 @@ ALTER TABLE `adminlogin`
 -- Indexes for table `branch`
 --
 ALTER TABLE `branch`
-  ADD PRIMARY KEY (`sr. no.`);
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- Indexes for table `faculty_registration`
 --
 ALTER TABLE `faculty_registration`
-  ADD PRIMARY KEY (`Sr. no`);
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- Indexes for table `notification`
@@ -230,31 +202,37 @@ ALTER TABLE `notification`
 -- Indexes for table `program`
 --
 ALTER TABLE `program`
-  ADD PRIMARY KEY (`sr.no`);
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- Indexes for table `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`sr. no.`);
+  ADD PRIMARY KEY (`sr`);
+
+--
+-- Indexes for table `semester`
+--
+ALTER TABLE `semester`
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- Indexes for table `session`
 --
 ALTER TABLE `session`
-  ADD PRIMARY KEY (`sr. no.`);
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- Indexes for table `student_registration`
 --
 ALTER TABLE `student_registration`
-  ADD PRIMARY KEY (`Sr. no`);
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- Indexes for table `subject`
 --
 ALTER TABLE `subject`
-  ADD PRIMARY KEY (`sr. no.`);
+  ADD PRIMARY KEY (`sr`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -270,49 +248,55 @@ ALTER TABLE `adminlogin`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `sr. no.` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sr` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `faculty_registration`
 --
 ALTER TABLE `faculty_registration`
-  MODIFY `Sr. no` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sr` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `Sr. no` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Sr. no` int(30) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `sr.no` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `sr` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `sr. no.` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sr` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `semester`
+--
+ALTER TABLE `semester`
+  MODIFY `sr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `session`
 --
 ALTER TABLE `session`
-  MODIFY `sr. no.` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sr` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `student_registration`
 --
 ALTER TABLE `student_registration`
-  MODIFY `Sr. no` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `sr` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `sr. no.` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sr` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

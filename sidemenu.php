@@ -20,6 +20,7 @@
                       <a href="session.php">Session</a>
                       <a href="section.php">Section</a>
                       <a href="subject.php">Subject</a>
+                      <a href="semester.php">Semester</a>
                     </div>
                   </li>
                   <li><a href="student.php">Student Registration</a></li>

@@ -11,16 +11,14 @@ include 'dbcon.php';
 <link rel="stylesheet" href="css/all.min.css">
 <!-- Table-->
 	<style type="text/css">
-	 table.center {
+		table.center {
   margin-left: auto; 
   margin-right: auto;
   margin-top: 160px
 }
 	</style>
-
 <!-- Popup window-->
 	<style>	
-
 .popup .overlay {
   position:fixed;
   top:0px;
@@ -87,7 +85,7 @@ include 'dbcon.php';
   position:absolute;
      top:0;
      right:0;
-    margin: 200px 12px 75px 300px;
+    margin: 200px 12px 75px 100px;
 }
 .button1 {background-color: #4CAF50;} /* Green */
 </style>
@@ -104,21 +102,20 @@ include 'dbcon.php';
   font-size: 18px;
   cursor: pointer;
     margin: 150px 190px 140px 150px;
-
 }
 .button2 {background-color: #4CAF50;} /* Green */
 </style>
 </head>
 <body>
-<form name='addprogram' action='add_program.php' method='post'>
+<form name='addsemester' action='add_semester.php' method='post'>
 	<div class="popup" id="popup-1">
   <div class="overlay"></div>
   <div class="content">
     <div class="close-btn" onclick="togglePopup()">&times;</div>
-    <h1>Add New Program</h1>
+    <h1>Add New Semester</h1>
     <div class="data">
-    	<label>Program Name</label>
-    	<input type="text" name="pname" required>
+    	<label>Semester Name</label>
+    	<input type="text" name="semname" required>
     </div>
     <div>
 <input type="submit" value='Save' class="button button2" style="width: 90px">
@@ -126,6 +123,7 @@ include 'dbcon.php';
   </div>
 </div>
 </form>
+
 
 <button class="button button1" onclick="togglePopup()" style="width: 180px">+ Add New</button>
 
@@ -135,18 +133,20 @@ include 'dbcon.php';
 }
 </script>
 
-<h1 style="margin-left:200px; margin-top:20px;" >PROGRAM</h1>
+</head>
+<body>
+<h1 style="margin-left:200px; margin-top:20px;" >SEMESTER</h1>
 
 <table border="7" cellpadding="15" style="width:70%" class="center">
 	<tr>
 		<th>Sr.No</th>
-		<th>Program Name</th>
+		<th>Semester Name</th>
 		<th>Status</th>
 		<th>Action</th>
 	</tr>
-
+    
 <?php 
-$query="select * from program";
+$query="select * from semester";
 
 if ($result = mysqli_query($conn, $query)) {
   $count=1;
@@ -157,7 +157,7 @@ if ($result = mysqli_query($conn, $query)) {
 		<td style="text-align: center;"><?php echo $count;?></td>
 		<td style="text-align: center;"><?php echo $row[1];?></td>
 		<td style="text-align: center;"><?php echo $row[2];?></td>
-		<td style="text-align: center;"><a href="pdelete.php?id='<?php echo $row[0];?>'"><i class="fa fa-trash"></i></a>/Edit</td>
+		<td style="text-align: center;"><a href="semdelete.php?id='<?php echo $row[0];?>'"><i class="fa fa-trash"></i></a>/Edit</td>
 	</tr>
 
     <?php
@@ -166,11 +166,6 @@ if ($result = mysqli_query($conn, $query)) {
   
 }
 ?>
-
-	
-
-	
-</table>
 
 </body>
 </html>

@@ -7,6 +7,8 @@ include 'dbcon.php';
 <!DOCTYPE html>
 <html>
 <head>
+<!--link-->
+<link rel="stylesheet" href="css/all.min.css">
 <!-- Table-->
 	<style type="text/css">
 	 table.center {
@@ -172,10 +174,28 @@ include 'dbcon.php';
   
  <!----- Subject Teaching ---------------------------------------------------------->
  <tr>
- <td>Subject Teaching</td>
- <td><input type="text" name="subteacher" maxlength="6" required/>
- </td>
- </tr>
+      <td>Subject Teaching</td>
+      <td><select name="teaching" id="">
+      <?php 
+        $query="select * from subject";
+
+        if ($result = mysqli_query($conn, $query)) {
+          
+          while ($row = mysqli_fetch_row($result)) {
+            
+            ?>
+            <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+       
+
+            <?php
+            
+          }
+          
+        }
+        ?>
+      </select>
+      </td>
+      </tr>
   
  <!----- Password ---------------------------------------------------------->
  <tr>
@@ -221,6 +241,7 @@ include 'dbcon.php';
     <th>Subject Teaching</th>
     <th>Gender</th>
     <th>DOB</th>
+    <th>Action</th>
 	</tr>
 
 <?php 
@@ -242,6 +263,7 @@ if ($result = mysqli_query($conn, $query)) {
     <td style="text-align: center;"><?php echo $row[7];?></td>
     <td style="text-align: center;"><?php echo $row[8];?></td>
     <td style="text-align: center;"><?php echo $row[9];?></td>
+    <td style="text-align: center;"><a href="facultydelete.php?id='<?php echo $row[0];?>'"><i class="fa fa-trash"></i></a>/Edit</td>
 		
 	</tr>
 
