@@ -142,6 +142,15 @@ include 'dbcon.php';
 
 <h1 style="margin-left:200px; margin-top:20px;" >NOTIFICATION</h1>
 
+<table border="7" cellpadding="15" style="width:70%" class="center">
+	<tr>
+		<th>Sr.No</th>
+		<th>Notification Name</th>
+    <th>Context</th>
+		<th>Status</th>
+		<th>Action</th>
+	</tr>
+
 
 
 
