@@ -79,23 +79,27 @@ include './sidemenu.php';
     <div class="container">
         <div class="box">
             <h2>1</h2>
-            <h3>ONE</h3>
-            <p>Lorem ipsum dolor sit amet fugit?</p>
+            <h3>No. Of Student</h3>
+            <p>To Add students</p>
+            <p><a href="student.php">Click Here</a></p>
         </div>
         <div class="box">
             <h2>2</h2>
-            <h3>TWO</h3>
-            <p>Lorem ipsum dolor sit amet fugit?</p>
+            <h3>No. Of Faculty</h3>
+            <p>To Add Facult</p>
+            <p><a href="faculty.php">Click Here</a></p>
         </div>
         <div class="box">
             <h2>3</h2>
-            <h3>THREE</h3>
-            <p>Lorem ipsum dolor sit amet fugit?</p>
+            <h3>Program</h3>
+            <p>To Add No. of Programs</p>
+            <p><a href="program.php">Click Here</a></p>
         </div>
         <div class="box">
             <h2>4</h2>
-            <h3>FOUR</h3>
-            <p>Lorem ipsum dolor sit amet fugit?</p>
+            <h3>Branch</h3>
+            <p>To Add No. of Branch</p>
+            <p><a href="branch.php">Click Here</a></p>
         </div>
     </div>
 </body>
